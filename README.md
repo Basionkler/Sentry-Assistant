@@ -40,8 +40,8 @@ python lbphrecognizer_train.py
 ```
 Il sistema verrà addestrato e verrà generato un file **.yml** in `trainedmodel`. Addestriamo ora il sistema per riconoscere le emozioni. Nella cartella `emotion_dataset` ci saranno due cartelle:
 
-*prepared
-*raw
+*	prepared
+*	raw
 
 In `prepared` verranno generate tutte le foto elaborate dal sistema su cui faremo l'addestramento. In `raw` ci sono le sottocartelle, che abbiamo creato con i comandi precedenti, in cui inserirete il vostro **training-set personalizzato**.
 
