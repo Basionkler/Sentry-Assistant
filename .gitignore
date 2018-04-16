@@ -9,6 +9,9 @@ __pycache__/
 *.png
 *.bmp
 
+# Ignore .yml models
+*.yml
+
 # C extensions
 *.so
 
