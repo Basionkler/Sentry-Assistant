@@ -6,3 +6,5 @@ Please, check our English version Wiki [HERE](https://github.com/Basionkler/Sent
 Or Italian version [HERE](https://github.com/Basionkler/Sentry-Wizard/wiki)
 
 This Project was made by **Federico Ferri** and **Marco Pietrageli**
+
+To download a ready-to-use dataset, check [HERE](https://github.com/Basionkler/Sentry-Wizard/wiki/5.-Dataset-ready)
