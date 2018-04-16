@@ -1,8 +1,6 @@
 import cv2
 import glob
 import os
-import datasetRead
-import datasetList
 import shutil
 
 from face_detection import find_faces
@@ -16,7 +14,7 @@ def extract_faces(names):
     print("Extracting faces...")
     for name in names:
         print("Processing %s data..." % name)
-        images = glob.glob('dataset/%s/*.jpg' % name)
+        images = glob.glob('face_dataset/%s/*.jpg' % name)
         for file_number, image in enumerate(images):
             frame = cv2.imread(image)
             faces = find_faces(frame)
@@ -34,7 +32,7 @@ def extract_faces(names):
 
 def get_folder_list() :
     listOfDir = []
-    for root, dirs, files in os.walk("dataset/", topdown=False):
+    for root, dirs, files in os.walk("face_dataset/", topdown=False):
        for name in dirs:
           listOfDir.append(name)
     listOfDir.sort()
