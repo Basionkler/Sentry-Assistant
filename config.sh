@@ -157,7 +157,3 @@ fi
 cd ../../..
 
 echo "System Ready."
-fi
-cd ../../..
-
-echo "Setup is done."
