@@ -2,17 +2,12 @@ import face_recognition
 import cv2
 import datasetRead
 import datasetList
-#from face_detection import find_faces
 import numpy as np
 
-# This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
-# other example, but it includes some basic performance tweaks to make things run a lot faster:
-#   1. Process each video frame at 1/4 resolution (though still display it at full resolution)
-#   2. Only detect faces in every other frame of video.
-
-# PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.
-# OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
-# specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
+# This demo was made by Federico Ferri and Marco Pietrangeli
+# The video is resized to the 25% than the original to improve performances
+# In this version we still don't have the performances we desired
+# it uses a single neural network (instead of two) to analyse both identities and emotions
 
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
@@ -27,14 +22,6 @@ else:
 # Create arrays of known face encodings and their names
 known_face_encodings = encodings
 known_face_names = facesname
-
-#Modello Emo/Gender Detection
-# Load model
-fisher_face_emotion = cv2.face.FisherFaceRecognizer_create()
-fisher_face_emotion.read('models/emotion_classifier_model.xml')
-fisher_face_gender = cv2.face.FisherFaceRecognizer_create()
-fisher_face_gender.read('models/gender_classifier_model.xml')
-emotions = ["afraid", "angry", "disgusted", "happy", "neutral", "sad", "surprised"]
 
 # Initialize some variables
 face_locations = []
@@ -72,8 +59,6 @@ while True:
 
 	# Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
 	rgb_small_frame = small_frame[:, :, ::-1]
-
-	# cv2.imwrite('Video.jpg', frame)
 
 	# Only process every other frame of video to save time
 	if init or delay == 0:

@@ -51,7 +51,7 @@ def dataset_import_from_files() :
 		n = n[:-1]
 		facesName.append(n)
 	print(len(facesName))
-	for root, dirs, files in os.walk("./dataset", topdown=False):
+	for root, dirs, files in os.walk("./face_dataset", topdown=False):
 		for name in files:
 
 			#image = face_recognition.load_image_file(item.strip())

@@ -6,7 +6,7 @@ import random
 fisher_face = cv2.face.FisherFaceRecognizer_create()
 
 def get_files(emotion, training_set_size):
-    files = glob.glob("../data/emotion/%s/*" % emotion)
+    files = glob.glob("emotion_dataset/prepared/%s/*" % emotion)
     random.shuffle(files)
     training = files[:int(len(files) * training_set_size)]
     prediction = files[-int(len(files) * (1 - training_set_size)):]
