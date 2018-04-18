@@ -108,8 +108,7 @@ while True:
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 
-	# Hit 'q' on the keyboard to quit!
-	if cv2.waitKey(2) & 0xFF == ord('u'):
+	if cv2.waitKey(1) & 0xFF == ord('u'):
 		print("SYSTEM UPDATING...")
 		encodings, facesname = datasetRead.dataset_update()
 		for item in encodings:
