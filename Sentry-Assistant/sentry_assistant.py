@@ -44,6 +44,9 @@ energies = []
 labels = []
 scores = []
 
+print("- Type 'q' to quit")
+print("- Type 's' to save a screenshot")
+
 while True:
     i = 0
     # Grab a single frame of video
@@ -65,7 +68,6 @@ while True:
         face_prediction, confidence = lbph_face_name.predict(normalized_face)
         emotion_prediction = fisher_face_emotion.predict(normalized_face)
         if(len(energies)-1 < i):
-            print("new face")
             energies.insert(i, starting_energy)
             dictionaries.insert(i, defaultdict(list))
             labels.insert(i, 0)
@@ -75,7 +77,7 @@ while True:
         scores[i] = score
         energies[i] = energy
         if (score > 50):
-            name = faces[labels[i]] + " "+ str(i)
+            name = faces[labels[i]]
         else:
             name = faces[-1]
         emo = emotions[emotion_prediction[0]]
@@ -130,6 +132,10 @@ while True:
     # Hit 'q' on the keyboard to quit!
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
+
+    if cv2.waitKey(1) & 0xFF == ord('s'):
+        cv2.imwrite('Screen.jpg', frame)
+        print("Screenshot saved.")
 
 # Release handle to the webcam
 video_capture.release()

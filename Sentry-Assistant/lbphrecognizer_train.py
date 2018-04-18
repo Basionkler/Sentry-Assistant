@@ -102,8 +102,8 @@ def prepare_training_data(data_folder_path):
 def get_folder_list() :
     listOfDir = []
     for root, dirs, files in os.walk(data_folder_path, topdown=False):
-       for name in dirs:
-          listOfDir.append(name)
+        for name in dirs:
+            listOfDir.append(name.replace("_", " "))
     listOfDir.sort()
     return listOfDir
 

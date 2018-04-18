@@ -30,7 +30,7 @@ def cache_results(face_prediction, confidence, default_dict, energy, learning_ra
         for label, values in default_dict.items():
             size = len(values)
             score = 10*size + sum(values)/size
-            print("Score: %s" %score +" Label: %s" %label + " Size: %s" %size)
+            # print("Score: %s" %score +" Label: %s" %label + " Size: %s" %size)
             if(score > prev_score):
                 prev_score = score
                 prev_label = label

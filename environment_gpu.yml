@@ -1,4 +1,4 @@
-name: tensorflow_gpu
+name: assistant_gpu
 channels:
   - menpo
   - defaults
