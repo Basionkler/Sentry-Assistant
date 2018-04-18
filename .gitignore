@@ -9,8 +9,8 @@ __pycache__/
 *.png
 *.bmp
 
-# Ignore .yml models
-*.yml
+# Ignore pre-trained models
+lbph_trained_model.yml
 
 # C extensions
 *.so
